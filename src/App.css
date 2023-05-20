@@ -2,9 +2,29 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.slideContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.slideContainer label {
+  margin: 9px;
+}
+
+.tile {
+  height: 50px;
+  width: 50px;
+  margin: 8px;
+}
+
+.wrong {
+  background-color: black
+}
+.correct {
+  background-color: greenyellow
+}
+.neutral {
+  background-color: #555
 }
 
 @media (prefers-reduced-motion: no-preference) {
