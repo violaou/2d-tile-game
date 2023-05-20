@@ -22,7 +22,6 @@ function App() {
   const [wrongCounter, setWrongCounter] = useState(0);
   const [solutionCounter, setSolutionCounter] = useState(0);
   const [correct, setCorrect] = useState(0);
-  const [inPlay, setPlay] = useState(false);
 
   function newGameBoard() {
     const newBoard = [];
@@ -67,7 +66,6 @@ function App() {
 
   function newGame(e) {
     e.preventDefault();
-    setPlay(true);
     const newGame = newGameBoard();
     const solutionBoard = structuredClone(newGame);
 
@@ -90,7 +88,7 @@ function App() {
         <label>size: {boardSize}</label>
         <input
           type="range"
-          min="2"
+          min="1"
           max="11"
           name="boardSize"
           defaultValue={boardSize}
@@ -99,11 +97,11 @@ function App() {
       </div>
       <p>You have {wrongCounter} incorrect guesses.</p>
       {solutionCounter === correct && <p>You win!</p>}
-      {!inPlay && (
-        <button onClick={newGame}>
-          {solutionCounter === correct ? "Replay" : "Start Game"}
-        </button>
-      )}
+
+      <button onClick={newGame}>
+        {solutionCounter === correct ? "Replay" : "Start Game"}
+      </button>
+
       <p></p>
       {boardSize > 0 && (
         <div
